@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Vote List') }}
+            {{ __('Message List') }}
         </h2>
     </x-slot>
 
@@ -12,13 +12,15 @@
                     <div id="noti-table">
                         <table class="table">
                             <tr>
-                                <th>Voter Name</th>
-                                <th>Voted Date</th>
+                                <th>From</th>
+                                <th>Message</th>
+                                <th>Sent Date</th>
                                 <th>Read Status</th>
                             </tr>
                             @foreach ($notification as $noti)
                                 <tr id="row-{{ $noti->id }}">
-                                    <td>{{ $noti->data['voter_name'] }}</td>
+                                    <td>{{ $noti->data['sender_name'] }}</td>
+                                    <td>{{ $noti->data['message'] }}</td>
                                     <td>{{ $noti->created_at }}</td>
                                     <td>
                                         <input type="hidden" value="{{ $noti->id }}" id="noti_id">

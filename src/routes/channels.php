@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Broadcast;
 
 /*
@@ -14,5 +15,14 @@ use Illuminate\Support\Facades\Broadcast;
 */
 
 Broadcast::channel('users.{id}', function ($user, $id) {
+    return true;
+});
+
+
+Broadcast::channel('posts.{id}', function () {
+    return true;
+});
+
+Broadcast::channel('sent-message.{id}', function () {
     return true;
 });

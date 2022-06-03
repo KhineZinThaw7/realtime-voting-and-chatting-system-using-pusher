@@ -35,6 +35,7 @@
         <script>
             window.userId = {{ Auth::id() }};
             window.voteCount = {{ Auth::user()->vote }};
+            window.noti = {{ auth()->user()->unreadNotifications->count() }}
         </script>
     </body>
 </html>
